@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lucky Boots</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+        <style>
+            hr {
+                color: #6ab2f2;
+                color: #17212b;
+                color: #5288c1;
+                color: #ffffff;
+                color: #ec3942;
+                color: #708499;
+                color: #6ab3f3;
+                color: #232e3c;
+                color: #f5f5f5;
+            }
+            body {
+                background-color: #17212b;
+            }
+            .header {
+                background-color: #232e3c;
+            }
+            .filter_link, .filter_link_active:hover, .filter_link_active:active, .filter_link_active:checked {
+                color: #708499 !important;
+                border-color: #708499 !important;
+            }
+            .filter_link_active, .filter_link:hover, .filter_link:active, .filter_link:checked {
+                color: #6ab3f3 !important;
+                border-color: #6ab3f3 !important;
+            }
+            .card_product {
+                background-color: #232e3c;
+                color: #ffffff;
+            }
+            .text_size {
+                font-size: 14px;
+            }
+            .btn_detail {
+                background-color: #708499;
+                color: #ffffff;
+            }
+            .btn_detail:hover, .btn_detail:active, .btn_detail:checked, .btn_detail:focus-visible {
+                background-color: #708499 !important;
+            }
+            .btn_basket {
+                background-color: #5288c1;
+                color: #ffffff;
+            }
+            .btn_basket:hover, .btn_basket:active, .btn_basket:checked, .btn_basket:focus-visible {
+                background-color: #6ab2f2 !important;
+                color: #ffffff !important;
+                border: none;
+            }
+
+            .active_page {
+                background-color: #5288c1;
+                color: #ffffff;
+            }
+            .active_page:hover, .active_page:active, .active_page:checked, .active_page:focus-visible {
+                background-color: #6ab2f2 !important;
+                color: #ffffff !important;
+            }
+            .noactive_page {
+                background-color: #232e3c;
+            }
+            .noactive_page:hover {
+                background-color: #17212b;
+            }
+
+            .count_basket {
+                border: 1px solid #6ab3f3;
+                padding: 0 7px 2px;
+                margin-left: 4px; 
+                color: #6ab3f3;
+            }
+            .count_basket_active {
+                border: 1px solid #fff;
+                padding: 0 9px 2px 7px;
+                margin-left: 4px; 
+                color: #fff;
+            }
+
+            .block_details {
+                background-color: #232e3c;
+            }
+
+            .accord_card {
+                background-color: #232e3c;
+                color: #ffffff;
+                border: none;
+            }
+            .block_price {
+                background-color: #232e3c;
+            }
+            .accord_btn {
+                background-color: #232e3c;
+                color: #5288c1;
+            }
+            .accord_btn::after {
+                display: none;
+                background-color: #5288c1;
+            }
+            .accord_btn:not(.collapsed)::after {
+                background-color: #6ab2f2;
+            }
+            .accord_btn:hover, .accord_btn:active, .accord_btn:checked, .accord_btn:focus-visible, .accord_btn:focus, .accord_btn:not(.collapsed) {
+                background-color: #232e3c;
+                color: #6ab2f2;
+                box-shadow: none;
+            }
+
+            .table_parameter {
+                --bs-table-bg: none;
+                --bs-table-striped-color: #ffffff;
+                --bs-table-active-color: #ffffff;
+                color: #fff !important;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top mb-3 shadow header">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand text-light" href="#">
+                    <i class="fa fa-paper-plane-o" aria-hidden="true" class="d-inline-block align-text-top"></i>&nbsp;
+                    Lucky Boots
+                </a>
+            </div>
+        </nav>
+        <div class="container mb-5">
+            <div class="row row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-sm-1 row-cols-1">
+                <!-- Images product -->
+                <div class="col mb-3">
+                    <div class="shadow">
+                        <div id="carouselExampleIndicators" class="carousel slide shadow" data-bs-theme="dark">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner rounded-top-4">
+                                <div class="carousel-item active">
+                                    <img src="https://fireboxstore.ru/i24i.php?connect=00000025866&foto=~11.jpg&razdel=tovar&h=300&w=700" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://fireboxstore.ru/i24i.php?connect=00000025866&foto=22.jpg&razdel=tovar&h=300&w=700" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://fireboxstore.ru/i24i.php?connect=00000025866&foto=33.jpg&razdel=tovar&h=300&w=700" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Следующий</span>
+                            </button>
+                        </div>
+                        <div class="rounded-bottom-4 pt-3 ps-3 pb-3 block_price">
+                            <h5 class="card-header fw-semibold fs-3 text-light">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Name product -->
+                <div class="col">
+                    <div class="rounded-4 shadow p-3 block_details mb-3">
+                        <p class="card-title fs-5 fw-semibold text-light">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                    </div>
+                    <!-- Sizes product -->
+                    <div class="rounded-4 shadow p-3 block_details mb-3">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                            <div class="btn-group" role="group" aria-label="Sizes product details">
+                                <p class="card-text text-white fw-normal fs-5 me-3 mb-0">Размеры:</p>
+                                <button type="button" class="btn btn-sm pt-0 pb-0 filter_link">41</button>
+                                <button type="button" class="btn btn-sm pt-0 pb-0 filter_link">42</button>
+                                <button type="button" class="btn btn-sm pt-0 pb-0 filter_link">43</button>
+                                <button type="button" class="btn btn-sm pt-0 pb-0 filter_link">44</button>
+                                <button type="button" class="btn btn-sm pt-0 pb-0 filter_link">45</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Params product -->
+                    <div class="accordion accordion-flush mb-4" id="accordionParams">
+                        <!-- Parameter product -->
+                        <div class="accordion-item accord_card rounded-top-4">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-top-4 fs-5 fw-normal accord_btn" type="button" data-bs-toggle="collapse" data-bs-target="#detailParameter" aria-expanded="false" aria-controls="detailParameter">
+                                Характеристики&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                          </h2>
+                          <div id="detailParameter" class="accordion-collapse collapse" data-bs-parent="#accordionParams">
+                            <div class="accordion-body pt-0">
+                                <table class="table table-borderless">
+                                    <tbody class="table-dark fs-5 table_parameter">
+                                        <tr>
+                                            <td class="col-5 text-white-50">Бренд</td>
+                                            <td>Adidas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-white-50">Сезон</td>
+                                            <td>демисезон</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Description product -->
+                        <div class="accordion-item accord_card rounded-bottom-4">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-bottom-4 fs-5 fw-normal accord_btn" type="button" data-bs-toggle="collapse" data-bs-target="#detailDescription" aria-expanded="false" aria-controls="detailDescription">
+                                Описание&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                          </h2>
+                          <div id="detailDescription" class="accordion-collapse collapse" data-bs-parent="#accordionParams">
+                            <div class="accordion-body fs-5 pt-0">
+                                Кроссовки с мехом для зимы
+                                Современные кроссовки adidas Niteball — еще один микс спортивного наследия торговой марки и модных трендов. Компания Adidas продолжает совмещать глобальные баскетбольные проекты с уличным стилем. Дизайнеры, создавшие модель Niteball, были вдохновлены все теми же соревнованиями-фестивалями Streetball Challenge, отличавшимися уникальностью пейзажей и разнообразием участников.
+                                Одна из важных характеристик современной моды и уличного стиля — это практичность. Поэтому в модели adidas Originals Niteball одновременно сочетаются высокий комфорт и оригинальный дизайн.
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <ul class="nav shadow nav-pills nav-fill fixed-bottom justify-content-center bg-dark header_bottom">
+            <li class="nav-item hb_btn">
+                <a class="nav-link text-light pt-3 pb-3 text-white-50 noactive_page" aria-current="page" href="/index.html"><i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Назад</a>
+            </li>
+            <li class="nav-item hb_btn">
+                <a class="nav-link text-light pt-3 pb-3 text-white active_page" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Добавить в корзину&nbsp;<span class="count_basket_active">0</span></a>
+            </li>
+        </ul>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
