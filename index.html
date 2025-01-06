@@ -1,41 +1,314 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Boots</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .header {
-            text-align: center;
-            padding: 20px;
-        }
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>Lucky Boots</h1>
-    </div>
-    <div class="container">
-        <input type="text" class="form-control" placeholder="Поиск...">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="{{ product.image }}" alt="{{ product.name }}" class="img-fluid">
-                    <h5>Кросовки</h5>
-                    <p>Доступные размеры: 37, 38</p>
-                    <p>Цена: 1000</p>
-                    <button class="btn btn-primary">Подробнее</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lucky Boots</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+        <style>
+            body {
+                background-color: #17212b;
+            }
+            .header {
+                background-color: #232e3c;
+            }
+            .filter_link, .filter_link_active:hover, .filter_link_active:active, .filter_link_active:checked {
+                color: #708499 !important;
+                border-color: #708499 !important;
+            }
+            .filter_link_active, .filter_link:hover, .filter_link:active, .filter_link:checked {
+                color: #6ab3f3 !important;
+                border-color: #6ab3f3 !important;
+            }
+            .card_product {
+                background-color: #232e3c;
+                color: #ffffff;
+            }
+            .text_size {
+                font-size: 14px;
+            }
+            .btn_detail {
+                background-color: #708499;
+                color: #ffffff;
+            }
+            .btn_detail:hover, .btn_detail:active, .btn_detail:checked, .btn_detail:focus-visible {
+                background-color: #708499 !important;
+            }
+            .btn_basket {
+                background-color: #5288c1;
+                color: #ffffff;
+            }
+            .btn_basket:hover, .btn_basket:active, .btn_basket:checked, .btn_basket:focus-visible {
+                background-color: #6ab2f2 !important;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top mb-3 shadow header">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand text-light" href="#">
+                    <i class="fa fa-paper-plane-o" aria-hidden="true" class="d-inline-block align-text-top"></i>&nbsp;
+                    Lucky Boots
+                </a>
+            </div>
+        </nav>
+
+        <div class="container mb-3">
+            <input class="form-control" placeholder="Введите для поиска...">
+        </div>
+
+        <div class="container mb-2">
+            <div class="btn-toolbar" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                <div class="btn-group shadow me-2" role="group" aria-label="Первая группа">
+                    <button type="button" class="btn btn-sm mb-1 filter_link">Мужские</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">Женские</button>
+                </div>
+                <div class="btn-group shadow me-2" role="group" aria-label="Вторая группа">
+                    <button type="button" class="btn btn-sm mb-1 filter_link">35-38</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">38-41</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">41-43</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">43-45</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">45-47</button>
+                </div>
+                <div class="btn-group shadow" role="group" aria-label="Третья группа">
+                    <button type="button" class="btn btn-sm mb-1 filter_link">2000-5000&nbsp;&#8381;</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">5000-8000&nbsp;&#8381;</button>
+                    <button type="button" class="btn btn-sm mb-1 filter_link">8000-10000&nbsp;&#8381;</button>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+
+        <div class="container">
+            <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card shadow h-100 card_product">
+                        <img src="https://fireboxstore.ru/goodsimg/00000025866/~11.jpg__small__.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header fw-semibold">4990&#8381;&nbsp;&nbsp;<span class="text-decoration-line-through fw-lighter fs-6 text-white-50">5700&#8381;</span>&nbsp;<span class="fw-medium fs-6 text-danger">-15%</span></h5>
+                        <div class="card-body pt-2">
+                            <p class="card-title fs-6 fw-semibold">Кроссовки Adidas Niteball Blue Black with Fur</p>
+                            <p class="card-text text-white-50 text_size">Размеры: 40, 41, 42, 43, 44, 45</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row btn-toolbar justify-content-between" role="toolbar" aria-label="Панель инструментов с группами кнопок">
+                                <div class="btn-group col-7" role="group" aria-label="Первая группа">
+                                    <button type="button" class="btn btn_detail">Подробнее</button>
+                                </div>
+                                <div class="btn-group col-5" role="group" aria-label="Вторая группа">
+                                    <button type="button" class="btn btn_basket"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;0&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+
+                
+
+
+
+
+            </div>  
+        </div>
+
+        <ul class="nav nav-pills nav-fill fixed-bottom justify-content-center bg-dark">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Корзина</a>
+            </li>
+        </ul>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
 </html>
