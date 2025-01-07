@@ -5,129 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lucky Boots</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
-        <style>
-            hr {
-                color: #6ab2f2;
-                color: #17212b;
-                color: #5288c1;
-                color: #ffffff;
-                color: #ec3942;
-                color: #708499;
-                color: #6ab3f3;
-                color: #232e3c;
-                color: #f5f5f5;
-            }
-            body {
-                background-color: #17212b;
-            }
-            .header {
-                background-color: #232e3c;
-            }
-            .filter_link, .filter_link_active:hover, .filter_link_active:active, .filter_link_active:checked {
-                color: #708499 !important;
-                border-color: #708499 !important;
-            }
-            .filter_link_active, .filter_link:hover, .filter_link:active, .filter_link:checked {
-                color: #6ab3f3 !important;
-                border-color: #6ab3f3 !important;
-            }
-            .card_product {
-                background-color: #232e3c;
-                color: #ffffff;
-            }
-            .text_size {
-                font-size: 14px;
-            }
-            .btn_detail {
-                background-color: #708499;
-                color: #ffffff;
-            }
-            .btn_detail:hover, .btn_detail:active, .btn_detail:checked, .btn_detail:focus-visible {
-                background-color: #708499 !important;
-            }
-            .btn_basket {
-                background-color: #5288c1;
-                color: #ffffff;
-            }
-            .btn_basket:hover, .btn_basket:active, .btn_basket:checked, .btn_basket:focus-visible {
-                background-color: #6ab2f2 !important;
-                color: #ffffff !important;
-                border: none;
-            }
-
-            .active_page {
-                background-color: #5288c1;
-                color: #ffffff;
-            }
-            .active_page:hover, .active_page:active, .active_page:checked, .active_page:focus-visible {
-                background-color: #6ab2f2 !important;
-                color: #ffffff !important;
-            }
-            .noactive_page {
-                background-color: #232e3c;
-            }
-            .noactive_page:hover {
-                background-color: #17212b;
-            }
-
-            .count_basket {
-                border: 1px solid #6ab3f3;
-                padding: 0 7px 2px;
-                margin-left: 4px; 
-                color: #6ab3f3;
-            }
-            .count_basket_active {
-                border: 1px solid #fff;
-                padding: 0 9px 2px 7px;
-                margin-left: 4px; 
-                color: #fff;
-            }
-
-            .block_details {
-                background-color: #232e3c;
-            }
-
-            .accord_card {
-                background-color: #232e3c;
-                color: #ffffff;
-                border: none;
-            }
-            .block_price {
-                background-color: #232e3c;
-            }
-            .accord_btn {
-                background-color: #232e3c;
-                color: #5288c1;
-            }
-            .accord_btn::after {
-                display: none;
-                background-color: #5288c1;
-            }
-            .accord_btn:not(.collapsed)::after {
-                background-color: #6ab2f2;
-            }
-            .accord_btn:hover, .accord_btn:active, .accord_btn:checked, .accord_btn:focus-visible, .accord_btn:focus, .accord_btn:not(.collapsed) {
-                background-color: #232e3c;
-                color: #6ab2f2;
-                box-shadow: none;
-            }
-
-            .table_parameter {
-                --bs-table-bg: none;
-                --bs-table-striped-color: #ffffff;
-                --bs-table-active-color: #ffffff;
-                color: #fff !important;
-            }
-        </style>
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <nav class="navbar sticky-top mb-3 shadow header">
             <div class="container-fluid justify-content-center">
-                <a class="navbar-brand text-light" href="#">
+                <a class="navbar-brand text-light" href="https://gdr102.github.io/lucky_boots/">
                     <i class="fa fa-paper-plane-o" aria-hidden="true" class="d-inline-block align-text-top"></i>&nbsp;
                     Lucky Boots
                 </a>
+            </div>
+        </nav>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://gdr102.github.io/lucky_boots/" class="nav_link">Главная</a></li>
+                <li class="breadcrumb-item active text-white-50 nav_link-active" aria-current="page">Просмотр товара</li>
+                </ol>
             </div>
         </nav>
         <div class="container mb-5">
@@ -236,10 +131,10 @@
 
         <ul class="nav shadow nav-pills nav-fill fixed-bottom justify-content-center bg-dark header_bottom">
             <li class="nav-item hb_btn">
-                <a class="nav-link text-light pt-3 pb-3 text-white-50 noactive_page" aria-current="page" href="/index.html"><i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Назад</a>
+                <a class="nav-link text-light pt-3 pb-3 text-white-50 noactive_page" aria-current="page" href="https://gdr102.github.io/lucky_boots/"><i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Назад</a>
             </li>
             <li class="nav-item hb_btn">
-                <a class="nav-link text-light pt-3 pb-3 text-white active_page" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Добавить в корзину&nbsp;<span class="count_basket_active">0</span></a>
+                <a class="nav-link text-light pt-3 pb-3 text-white active_page" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Добавить в корзину&nbsp;<span class="count_basket_active">3</span></a>
             </li>
         </ul>
 
